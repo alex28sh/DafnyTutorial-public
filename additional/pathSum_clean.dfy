@@ -1,4 +1,6 @@
 
+// Verify method `hasPathSum`
+
 // We have datatypes, as in Haskell, and we can do pattern matching!!!
 datatype TreeNode = Nil | Tree(val: nat, left: TreeNode, right: TreeNode)
 
