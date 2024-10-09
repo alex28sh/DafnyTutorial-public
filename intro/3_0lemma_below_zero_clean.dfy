@@ -33,13 +33,7 @@ method below_zero(ops: seq<int>) returns (res : bool)
     var balance : int := 0;
     var i : int := 0;
     while (i < |ops|)
-        invariant 0 <= i <= |ops| // as always
-        invariant balance == psum(ops[..i])
-        invariant forall j : int :: 0 <= j < i ==> psum(ops[..j]) >= 0
-        // fill in the invariants
     {
-        psum_property(ops, i);
-        assert psum(ops[..i + 1]) == psum(ops[..i]) + ops[i];
         balance := balance + ops[i]; // psum(ops[..i+1])
         if (balance < 0) {
             return true;
