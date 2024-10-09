@@ -1,3 +1,5 @@
+// Prove the property of the `reverse` function stated in the lemma.
+
 function reverse(xs: seq<nat>): seq<nat>
 {
     if xs == [] then [] else reverse(xs[1..]) + [xs[0]]
