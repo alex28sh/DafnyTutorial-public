@@ -28,7 +28,6 @@ method FindZero(a: array<int>) returns (index: int)
     // add invariants
   {
     if a[index] == 0 { return; }
-    SkippingLemma(a, index);
     index := index + a[index];
   }
   index := -1;
