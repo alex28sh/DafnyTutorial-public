@@ -13,12 +13,11 @@ method mcontained(v : seq<int>, w : seq<int>) returns (b : bool)
 {
 	var i := 0;
 	var j := 0;
-	while (i < |v| && j < |w| && (v[i] >= w[j]))
+	while (i < |v| && j < |w| && (v[i] <= w[j]))
         // add here necessary invariants
 	{	
 		if (v[i] == w[j]) {
 			i := i + 1;
-			j := j + 1;
 		}
 		j := j + 1;
 		
@@ -28,6 +27,6 @@ method mcontained(v : seq<int>, w : seq<int>) returns (b : bool)
 
 method Main() {
     print("Hello, world!" + "\n");
-    var res := mcontained([1, 3, 5], [1, 2, 3, 4, 5]);
+    var res := mcontained([1, 2, 3], [1, 2, 3, 4, 5]);
     print res, "\n";
 }
